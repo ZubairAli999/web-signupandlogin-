@@ -52,9 +52,63 @@
       <div class="form-inner-part">
         <h1>Login</h1>
         <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <input type="pass" placeholder="Password">
         <button type="submit" href="/">Login</button>
       </div>
     </form>
   </body>
+  <?php
+
+    if(isset($_POST['login'])){
+		
+		$email= $_POST['email'];
+		$pass=$_POST['pass'];
+		
+		$check = "select*from user where email='$email' AND password ='$pass'";
+		$check_work= mysqli_query($con,$check);
+		
+		if($check_work){
+			if(mysqli_num_rows($check_work) > 0 ){
+				
+				echo"
+				<script>
+				alert('You are Successfully  Logged in');
+				window.location.href='login.php';
+				</script>
+				";
+				
+			}else{
+				
+				echo"
+				<script>
+				alert('Password or Email not Found ');
+				window.location.href('signup.php');
+				</script>
+				";
+			}
+			
+			
+		}else{
+			
+			
+				echo"
+				<script>
+				alert('Database Error  ');
+				window.location.href('signup.php');
+				</script>
+				";
+		}
+		
+		
+		
+	}else{
+		
+		
+	}
+
+
+
+
+
+?>
 </html>
