@@ -103,7 +103,7 @@ if(isset($_POST['signup'])){
 					echo "
 		<script>
 		alert('Registration Successful ');
-		window.location.href='home.php';
+		window.location.href='signup.php';
 		</script>
 		";
 					
@@ -112,7 +112,7 @@ if(isset($_POST['signup'])){
 						echo "
 		<script>
 		alert('Registration Failed  ');
-		window.location.href='register.php';
+		window.location.href='signup.php';
 		</script>
 		";
 				}
@@ -126,7 +126,7 @@ if(isset($_POST['signup'])){
 			echo "
 		<script>
 		alert('Database Problem');
-		window.location.href='register.php';
+		window.location.href='signup.php';
 		</script>
 		";
 			
